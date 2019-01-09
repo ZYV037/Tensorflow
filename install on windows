@@ -1,0 +1,15 @@
+(1)usual: https://tensorflow.google.cn/install/pip
+
+(2)install with Anoconda:
+  1) Install Anocaonda:Anaconda3-5.2.0-Windows-x86_64.exe
+  
+  2) conda create -n tensorflow_env tensorflow
+ 	   conda activate tensorflow_env 
+     https://www.anaconda.com/blog/developer-blog/tensorflow-in-anaconda/
+     
+  3)Install IPython(Spyder3)
+  
+  I chose write python in Spyder3
+  4) you can pip install other sc lib
+  
+  
