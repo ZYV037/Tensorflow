@@ -64,9 +64,9 @@ def train(model, inputs, outputs, learning_rate):
     with tf.GradientTape() as t:
         current_loss = loss(model(inputs), outputs)
         
-    dW, db = t.gradient(current_loss, [model.W, model.b])
-    model.W.assign_sub(learning_rate*dW)
-    model.b.assign_sub(learning_rate*db)
+        dW, db = t.gradient(current_loss, [model.W, model.b])
+        model.W.assign_sub(learning_rate*dW)
+        model.b.assign_sub(learning_rate*db)
  
 # Collect the history of W-values and b-values to plot later
 Ws, bs = [], []
@@ -75,9 +75,8 @@ epochs = range(50)
 for epoch in epochs:
     Ws.append(model.W.numpy())
     bs.append(model.b.numpy())
-    current_loss = loss(model(inputs), outputs)
-
     train(model, inputs, outputs, 0.1)
+    current_loss = loss(model(inputs), outputs)
     print("Epoch %2d: W=%1.2f, b=%1.2f, loss=%2.5f'" %(epoch, Ws[-1], bs[-1], current_loss ) )
 
 # Let's plot it all
